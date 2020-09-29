@@ -1,0 +1,46 @@
+.bbox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (100px)[2];
+      grid-template-rows: repeat(2, 100px);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  width: 300px;
+}
+
+.mbox {
+  background: #9ff;
+  border: 1px solid #333;
+  font-size: 10px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.mbox:nth-child(1) {
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+}
+
+.mbox:nth-child(2) {
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+
+.mbox:nth-child(3) {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+}
+
+.mbox:nth-child(4) {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+/*# sourceMappingURL=style.css.map */
