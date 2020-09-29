@@ -24,11 +24,9 @@ ol{
 }
 #grid ol{
   padding-left:33px;
-  grid-row-start: 1;
-  grid-column-start: 1;
+  grid-area:1/1;
 }
 #grid #article{
   padding-left:25px;
-  grid-row-start: 1;
-  grid-column-start: 2;
+  grid-area:1/2;
 }

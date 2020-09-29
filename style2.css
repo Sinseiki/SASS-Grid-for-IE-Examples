@@ -32,16 +32,14 @@ ol {
 #grid ol {
   padding-left: 33px;
   -ms-grid-row: 1;
-      grid-row-start: 1;
   -ms-grid-column: 1;
-      grid-column-start: 1;
+  grid-area: 1/1;
 }
 
 #grid #article {
   padding-left: 25px;
   -ms-grid-row: 1;
-      grid-row-start: 1;
   -ms-grid-column: 2;
-      grid-column-start: 2;
+  grid-area: 1/2;
 }
 /*# sourceMappingURL=style2.css.map */
