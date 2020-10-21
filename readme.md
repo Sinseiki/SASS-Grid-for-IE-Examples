@@ -14,7 +14,6 @@ You can open these on IE 11.
 
 Here are attributes and values you can use on SASS for IE 11.
 
-```txt
 
 - Grid (2)
   - Container Attribute (4)
@@ -30,13 +29,13 @@ Here are attributes and values you can use on SASS for IE 11.
     - justify-self
     - align-self
     - z-index
+
   - Unit (3)
     - fr
     - min-content (1)
       - word-break
     - max-content
+
   - Function (2)
     - repeat
     - minmax
-
-```
