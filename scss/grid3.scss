@@ -10,7 +10,7 @@ body{
 
     grid-area:1/1/1/4;
     // grid-area:1/1/1/span 3;
-    // grid-area:1/1/span 3/4;
+    // grid-area:1/span 3/1/4;
 
     text-align:center;
     background: #557;
@@ -36,7 +36,7 @@ body{
     
     grid-area:3/2/3/4;
     // grid-area:3/2/3/span 2;
-    // grid-area:3/2/span 2/4;
+    // grid-area:3/span 2/3/4;
 
     text-align:center;
     background: #557;
