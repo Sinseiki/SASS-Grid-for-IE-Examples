@@ -407,9 +407,10 @@ footer {
   display: -ms-grid;
   display: grid;
   background: #43c499;
-  height: 100px;
   -ms-grid-columns: 200px 1fr 150px;
       grid-template-columns: 200px 1fr 150px;
+  -ms-grid-rows: 100px;
+      grid-template-rows: 100px;
 }
 
 footer .logo {
