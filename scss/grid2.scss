@@ -1,0 +1,37 @@
+body{
+  display:grid;
+  grid-template-rows: 50px 400px 50px;
+  grid-template-columns: 100px 400px 100px;
+  grid-template-areas:
+    "hd hd hd"
+    "nv mn as"
+    ". ft ft";
+
+  header{
+    grid-area:hd;
+    text-align:center;
+    background: #557;
+    color:#fff;
+  }
+  nav{
+    grid-area:nv;
+    text-align:center;
+    background:#eef;
+  }
+  main{
+    grid-area:mn;
+    display:block; // Main tag needs this line for IE
+  }
+  aside{
+    grid-area:as;
+    background:#eef;
+  }
+  footer{
+    grid-area:ft;
+    text-align:center;
+    background: #557;
+    color:#fff;
+  }
+}
+
+

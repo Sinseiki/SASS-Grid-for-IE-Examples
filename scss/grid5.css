@@ -1,0 +1,65 @@
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+}
+
+body .wrap {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50px 200px 25px 50px;
+      grid-template-rows: 50px 200px 25px 50px;
+  -ms-grid-columns: 100px 300px 100px 100px;
+      grid-template-columns: 100px 300px 100px 100px;
+}
+
+body .wrap header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: 1/1/1/5;
+  text-align: center;
+  background: #557;
+  color: #fff;
+}
+
+body .wrap nav {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: 2/1/5/1;
+  text-align: center;
+  background: #eef;
+}
+
+body .wrap main {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: 2/2/5/4;
+  display: block;
+}
+
+body .wrap aside {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 4;
+  grid-area: 2/4/5/4;
+  background: #eef;
+}
+
+body .wrap footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: 3/3/3/5;
+  text-align: center;
+  background: #557;
+  color: #fff;
+  z-index: 1;
+}
+/*# sourceMappingURL=grid5.css.map */

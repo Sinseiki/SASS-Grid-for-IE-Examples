@@ -1,0 +1,51 @@
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50px 400px 50px;
+      grid-template-rows: 50px 400px 50px;
+  -ms-grid-columns: 100px 400px 100px;
+      grid-template-columns: 100px 400px 100px;
+}
+
+body header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 1/1/1/4;
+  text-align: center;
+  background: #557;
+  color: #fff;
+}
+
+body nav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: 2/1;
+  text-align: center;
+  background: #eef;
+}
+
+body main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: 2/2;
+  display: block;
+}
+
+body aside {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: 2/3;
+  background: #eef;
+}
+
+body footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: 3/2/3/4;
+  text-align: center;
+  background: #557;
+  color: #fff;
+}
+/*# sourceMappingURL=grid3.css.map */

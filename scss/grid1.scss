@@ -1,0 +1,23 @@
+.container{
+  display:grid;
+  grid-template-rows: 100px 100px;
+  grid-template-columns: 150px 150px;
+}
+
+.item{
+  background:#ffd;
+  border:1px solid #333;
+  text-align:center;
+  &:nth-child(1){
+    grid-area:1/1;
+  }
+  &:nth-child(2){
+    grid-area:1/2;
+  }
+  &:nth-child(3){
+    grid-area:2/1;
+  }
+  &:nth-child(4){
+    grid-area:2/2;
+  }
+}

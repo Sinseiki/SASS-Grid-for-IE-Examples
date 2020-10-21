@@ -1,0 +1,42 @@
+body{
+  display:grid;
+  grid-template-columns: 100%;
+
+  .wrap{
+    justify-self:center;
+    
+    display:grid;
+    grid-template-rows: 50px 200px 25px 50px;
+    grid-template-columns: 100px 300px 100px 100px;
+
+    header{
+      grid-area:1/1/1/5;
+      text-align:center;
+      background: #557;
+      color:#fff;
+    }
+    nav{
+      grid-area:2/1/5/1;
+      text-align:center;
+      background:#eef;
+    }
+    main{
+      grid-area:2/2/5/4;
+      display:block; // Main tag needs this line for IE
+    }
+    aside{
+      grid-area:2/4/5/4;
+      background:#eef;
+    }
+    footer{ 
+      grid-area:3/3/3/5;
+      text-align:center;
+      background: #557;
+      color:#fff;
+      
+      z-index:1;
+    }
+  }
+}
+
+

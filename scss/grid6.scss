@@ -1,0 +1,42 @@
+body{
+  display:grid;
+  grid-template-columns: 100%;
+
+  .wrap{
+    justify-self:center;
+
+    max-width:700px;
+    width:100%;
+    
+    display:grid;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 100px 6fr 1fr;
+
+    header{
+      grid-area:1/1/1/4;
+      text-align:center;
+      background: #557;
+      color:#fff;
+    }
+    nav{
+      grid-area:2/1;
+      background:#eef;
+    }
+    main{
+      grid-area:2/2;
+      display:block; // Main tag needs this line for IE
+    }
+    aside{
+      grid-area:2/3;
+      background:#eef;
+    }
+    footer{
+      grid-area:3/2/3/4;
+      text-align:center;
+      background: #557;
+      color:#fff;
+    }
+  }
+}
+
+

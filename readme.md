@@ -2,11 +2,41 @@
 
 https://sinseiki.github.io/SASS-Grid-for-IE-Examples
 
-You can use Grid on IE 11,
+You can use CSS Grid on IE 11,
 
-but IE has different Grid attributes, so you need to edit SASS to use grid.
+but IE has different Grid attributes, so you need to edit SASS to use Grid.
 
-Here are 5 examples being related to [Heropy's](https://www.fastcampus.co.kr/dev_online_react) and [Egoing's](https://opentutorials.org/course/3086/18322).
+Here are 9 examples.
 
 You can open these on IE 11.
 
+
+
+Here are attributes and values you can use on SASS for IE 11.
+
+```txt
+
+- Grid (2)
+  - Container Attribute (4)
+    - display
+    - grid-template-areas
+    - grid-template-rows
+    - grid-template-columns
+
+  - Item Attribute (4)
+    - grid-area (2)
+      - grid-row
+      - grid-column
+    - justify-self
+    - align-self
+    - z-index
+  - Unit (3)
+    - fr
+    - min-content (1)
+      - word-break
+    - max-content
+  - Function (2)
+    - repeat
+    - minmax
+
+```
