@@ -1,0 +1,316 @@
+*{margin:0;padding:0;box-sizing:border-box;color:#666666}
+a{display:block;color:#666666;text-decoration:none}
+ul{list-style:none}
+h1,.logo,.gallery a,.sns a{text-indent:-9999px}
+
+$mainColor:#4d6c8b;
+$subColor:#43c499;
+
+
+body{
+  display:grid;
+  grid-template-rows: 100vh;
+  grid-template-columns: 1fr;
+}
+
+.wrap{
+  width:1200px;
+  align-self:center;
+  justify-self:center;
+}
+
+header{
+  display:grid;
+  grid-template-rows: 100px;
+  grid-template-columns: 200px 1fr;
+  background:$mainColor;
+
+  h1 {
+    grid-area:1/1;
+    align-self:center;
+    a{
+      width:200px;
+      height:40px;
+      background:url(../images/logo.png);
+    }
+  }
+
+  >ul{
+    //display:flex; 여기는 flex를 섞어쓰면 프리픽스 오류가 난다
+    width:600px;
+    grid-area:1/2;
+    align-self:center;
+    justify-self:end;
+
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4,150px);
+    >li{
+      position:relative;
+      @for $i from 1 through 4{
+        &:nth-child(#{$i}){
+          grid-area:1/#{$i};
+        }
+      }
+      >a{
+        color:#fff;
+        &:hover{
+        background:$subColor;
+        }
+      }
+      ul{
+        position:absolute;
+        height:0;
+        overflow:hidden;
+        transition:height .3s;
+        background:#fff;
+        li{
+          width:inherit;
+          a{
+            &:hover{
+              background:$subColor;
+              color:#fff;
+            }
+          }
+        }
+  
+      }
+    }
+    li{
+      a{
+        width:150px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:30px;
+      }
+    }
+    &:hover{
+      ul{
+        height:130px;
+      }
+    }
+  }
+}
+
+.slide{
+  height:300px;
+  overflow:hidden;
+  ul{
+    animation:slideMove 12s infinite;
+    &:hover{
+      animation-play-state: paused;
+    }
+    li{
+      a{
+        height:300px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        p{
+          background:rgba(255,255,255,.9);
+          font-size:24px;
+          border-radius:10px;
+          box-sizing:content-box;
+          padding:30px;
+          text-align:center;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideMove{
+  0% {margin-top:0px;}
+  30% {margin-top:0px;}
+  33% {margin-top:-300px;}
+  63% {margin-top:-300px;}
+  66% {margin-top:-600px;}
+  96% {margin-top:-600px;}
+  99% {margin-top:-900px;}
+  100% {margin-top:-900px;}
+}
+
+
+.content{
+  padding:10px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 180px;
+  .leftContent{
+    display:grid;
+    grid-area:1/1;
+    position:relative;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: 30px;
+    h2{
+      &:first-of-type{
+        grid-area:1/1;
+      }
+      &:last-of-type{
+        grid-area:1/2;
+      }
+      a{
+        font-size:19px;
+        font-weight:normal;
+        border:1px solid #333;
+        text-align:center;
+        &.on{
+          background:$mainColor;
+          color:#fff;
+        }
+      }
+    }
+    .bbs{
+      position:absolute;
+      left:0;
+      top:40px;
+      width:100%;
+      display:none;
+      &.on{
+        display:block;
+      }
+      table{
+        width:100%;
+      }
+    }
+    .gallery{
+      position:absolute;
+      display:none;
+      left:0;
+      width:100%;
+      height:120px;
+      top:40px;
+      padding:10px;
+      &.on{
+        display:block;
+        ul{
+          display:flex;
+          height:100%;
+          li{
+            flex:1 0 0;
+            a{
+              background-size:cover;
+              height:100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .banner{
+    grid-area:1/2;
+    display:flex;
+    flex-direction:column;
+    li{
+      flex:1 0 0;
+      a{
+        height:100%;
+        text-indent:-9999px;
+      }
+    }
+  }
+  .icon{
+    grid-area:1/3;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    li{
+      height:150px;
+      &:nth-of-type(1){
+        grid-area:1/1;
+      }
+      &:nth-of-type(2){
+        grid-area:1/2;
+      }
+      &:nth-of-type(3){
+        grid-area:1/3;
+      }
+      a{
+        height:100%;
+        padding-top:120px;
+        text-align:center;
+        background-size:80% !important;
+        font-size:20px;
+      }
+    }
+  }
+}
+
+footer{
+  display:grid;
+  background:$subColor;
+  height:100px;
+  grid-template-columns:200px 1fr 150px;
+  .logo{
+    background:url('../images/logof.png') center / cover;
+    height:40px;
+    align-self: center;
+  }
+  .copyright{
+    color:#fff;
+    grid-area:1/2;
+    align-self: center;
+    justify-self: center;
+  }
+  .sns{
+    grid-area:1/3;
+    align-self: center;
+    display:grid;
+
+    height:30px;
+    grid-template-columns: repeat(3,50px);
+    li{
+      &:nth-child(2){
+        grid-area:1/2;
+      }
+      &:nth-child(3){
+        grid-area:1/3;
+      }
+      a{
+        height:30px;
+        width:30px;
+        border-radius:3px;
+      }
+    }
+  }
+}
+
+.modal{
+  position:absolute;
+  left:50%;
+  top:20%;
+  transform:translateX(-50%);
+  background:#fff;
+  width:600px;
+  padding:20px 30px;
+  box-shadow:5px 5px 5px #777;
+  border-radius:10px;
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .3s;
+  *{
+    margin:10px 0;
+  }
+  .closeDiv{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    .close{
+      width:100px;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      height:50px;
+      background:$mainColor;
+      color:#fff;
+      border:none;
+      font-size:20px;
+      border-radius:5px;
+      cursor:pointer;
+    }
+  }
+  &.on{
+    visibility:visible;
+    opacity:1;
+  }
+}
