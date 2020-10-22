@@ -5,6 +5,7 @@ body {
       grid-template-rows: 100vh;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
+  min-width: 600px;
 }
 
 body .wrap {

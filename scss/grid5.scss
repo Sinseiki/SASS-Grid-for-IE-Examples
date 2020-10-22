@@ -1,6 +1,7 @@
 body{
   display:grid;
   grid-template-columns: 100%;
+  min-width:600px;
 
   .wrap{
     justify-self:center;
