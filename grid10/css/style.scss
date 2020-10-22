@@ -9,14 +9,15 @@ $subColor:#43c499;
 
 body{
   display:grid;
+  min-width:1200px;
   grid-template-rows: 100vh;
   grid-template-columns: 1fr;
 }
 
 .wrap{
   width:1200px;
-  align-self:center;
-  justify-self:center;
+  justify-self:center; // 부모에 min-width 없이 쓰면 화면 크기 변경시 내용이 잘린다
+  //align-self:center; // 부모에 min-height를 해 주어도 화면 크기 변경시 내용이 잘리므로 사용하지 않는다
 }
 
 header{

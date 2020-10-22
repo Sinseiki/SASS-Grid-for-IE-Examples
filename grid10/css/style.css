@@ -23,6 +23,7 @@ h1, .logo, .gallery a, .sns a {
 body {
   display: -ms-grid;
   display: grid;
+  min-width: 1200px;
   -ms-grid-rows: 100vh;
       grid-template-rows: 100vh;
   -ms-grid-columns: 1fr;
@@ -31,9 +32,6 @@ body {
 
 .wrap {
   width: 1200px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
 }
