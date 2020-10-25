@@ -6,7 +6,7 @@ You can use CSS Grid on IE 11,
 
 but IE has different Grid attributes, so you need to edit SASS to use Grid.
 
-Here are 10 examples.
+Here are 11 examples.
 
 You can open these on IE 11.
 

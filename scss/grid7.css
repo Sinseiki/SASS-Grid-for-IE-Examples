@@ -6,6 +6,7 @@
   -ms-grid-columns: min-content min-content max-content;
       grid-template-columns: -webkit-min-content -webkit-min-content -webkit-max-content;
       grid-template-columns: min-content min-content max-content;
+  width: 700px;
 }
 
 .item {
