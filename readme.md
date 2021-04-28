@@ -15,7 +15,7 @@ You can open these on IE 11.
 Here are attributes and values you can use on SASS for IE 11.
 
 
-- Grid (2)
+- Grid (4)
   - Container Attribute (4)
     - display
     - grid-template-areas
