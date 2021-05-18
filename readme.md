@@ -46,7 +46,7 @@ You can open these on IE 11.
 - Grid (4)
 	- Container Attribute (5)
 		- display
-		- grid (4)
+		- grid (4) (IE X)
 			- grid-template (3) (IE X)
 				- grid-template-areas
 				- grid-template-rows (2)
