@@ -1,326 +1,403 @@
-*{margin:0;padding:0;box-sizing:border-box;color:#666666}
-a{display:block;color:#666666;text-decoration:none}
-ul{list-style:none}
-h1,.logo,.gallery a,.sns a{text-indent:-9999px}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #666666
+}
+
+a {
+  display: block;
+  color: #666666;
+  text-decoration: none
+}
+
+ul {
+  list-style: none
+}
+
+h1,
+.logo,
+.gallery a,
+.sns a {
+  text-indent: -9999px
+}
 
 $mainColor:#4d6c8b;
 $subColor:#43c499;
 
 
-body{
-  display:grid;
-  min-width:1200px;
+body {
+  display: grid;
+  min-width: 1200px;
   grid-template-rows: 100vh;
   grid-template-columns: 1fr;
 }
 
-.wrap{
-  width:1200px;
-  justify-self:center; // 부모에 min-width 없이 쓰면 화면 크기 변경시 내용이 잘린다
+.wrap {
+  width: 1200px;
+  justify-self: center; // 부모에 min-width 없이 쓰면 화면 크기 변경시 내용이 잘린다
   //align-self:center; // 부모에 min-height를 해 주어도 화면 크기 변경시 내용이 잘리므로 사용하지 않는다
-  display:grid;
-  grid-template-rows:100px 300px 200px 100px;
-  grid-template-columns:repeat(9,(1200px/9));
+  display: grid;
+  grid-template-rows: 100px 300px 200px 100px;
+  grid-template-columns: 200px (1200px*2/9)-200 repeat(7, (1200px/9));
 }
 
-header{
-  background:$mainColor;
-  grid-area:1/1/1/10;
-  display:grid;
-  grid-template-rows: 100px;
-  grid-template-columns:repeat(9,(1200px/9));
+h1 {
+  grid-area: 1/1;
+  align-self: center;
 
-  h1 {
-    grid-area:1/1;
-    align-self:center;
-    a{
-      width:200px;
-      height:40px;
-      background:url(../images/logo.png);
-    }
+  a {
+    width: 200px;
+    height: 40px;
+    background: url(../images/logo.png);
   }
+}
 
-  >ul{
-    //display:flex; 여기는 flex를 섞어쓰면 프리픽스 오류가 난다
-    align-self:center;
-    grid-area:1/6/1/10;
-    display:grid;
-    grid-template-rows:100px;
-    grid-template-columns:repeat(4,(1200px/9));
-    text-align:center;
-    >li{
-      position:relative;
-      align-self:center;
-      @for $i from 1 through 4{
-        &:nth-child(#{$i}){
-          grid-area:1/#{$i};
-        }
+.background {
+  z-index: -1
+}
+
+.background {
+  background: $mainColor;
+  grid-area: 1/1/1/10;
+}
+
+
+.wrap>ul:first-of-type {
+  //display:flex; 여기는 flex를 섞어쓰면 프리픽스 오류가 난다
+  align-self: center;
+  grid-area: 1/6/1/10;
+  display: grid;
+  grid-template-rows: 100px;
+  grid-template-columns: repeat(4, (1200px/9));
+  text-align: center;
+
+  >li {
+    position: relative;
+    align-self: center;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        grid-area:1/#{$i};
       }
-      >a{
-        color:#fff;
-        line-height:30px;
-        &:hover{
-        background:$subColor;
-        }
+    }
+
+    >a {
+      color: #fff;
+      line-height: 30px;
+
+      &:hover {
+        background: $subColor;
       }
-      ul{
-        position:absolute;
-        height:0;
-        overflow:hidden;
-        transition:height .3s;
-        background:#fff;
-        text-align:center;
-        li{
-          width:inherit;
-          a{
-            line-height:30px;
-            &:hover{
-              background:$subColor;
-              color:#fff;
-            }
+    }
+
+    ul {
+      position: absolute;
+      height: 0;
+      overflow: hidden;
+      transition: height .3s;
+      background: #fff;
+      text-align: center;
+
+      li {
+        width: inherit;
+
+        a {
+          line-height: 30px;
+
+          &:hover {
+            background: $subColor;
+            color: #fff;
           }
         }
-  
       }
+
     }
-    li{
-      a{
-        justify-content:center;
-        align-items:center;
-        height:30px;
-        width:(1200px/9);
-      }
+  }
+
+  li {
+    a {
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: (1200px/9);
     }
-    &:hover{
-      ul{
-        height:130px;
-      }
+  }
+
+  &:hover {
+    ul {
+      height: 130px;
     }
   }
 }
 
-.slide{
-  height:300px;
-  overflow:hidden;
-  grid-area:2/1/2/10;
-  ul{
-    animation:slideMove 12s infinite;
-    &:hover{
+
+.slide {
+  height: 300px;
+  overflow: hidden;
+  grid-area: 2/1/2/10;
+
+  ul {
+    animation: slideMove 12s infinite;
+
+    &:hover {
       animation-play-state: paused;
     }
-    li{
-      a{
-        height:300px;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        p{
-          background:rgba(255,255,255,.9);
-          font-size:24px;
-          border-radius:10px;
-          box-sizing:content-box;
-          padding:30px;
-          text-align:center;
+
+    li {
+      a {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          background: rgba(255, 255, 255, .9);
+          font-size: 24px;
+          border-radius: 10px;
+          box-sizing: content-box;
+          padding: 30px;
+          text-align: center;
         }
       }
     }
   }
 }
 
-@keyframes slideMove{
-  0% {margin-top:0px;}
-  30% {margin-top:0px;}
-  33% {margin-top:-300px;}
-  63% {margin-top:-300px;}
-  66% {margin-top:-600px;}
-  96% {margin-top:-600px;}
-  99% {margin-top:-900px;}
-  100% {margin-top:-900px;}
+@keyframes slideMove {
+  0% {
+    margin-top: 0px;
+  }
+
+  30% {
+    margin-top: 0px;
+  }
+
+  33% {
+    margin-top: -300px;
+  }
+
+  63% {
+    margin-top: -300px;
+  }
+
+  66% {
+    margin-top: -600px;
+  }
+
+  96% {
+    margin-top: -600px;
+  }
+
+  99% {
+    margin-top: -900px;
+  }
+
+  100% {
+    margin-top: -900px;
+  }
 }
 
 
-.content{
-  padding:10px;
-  display:grid;
-  grid-area:3/1/3/10;
+
+.leftContent {
+  display: grid;
+  grid-area: 3/1/3/4;
+  position: relative;
+  grid-template-columns: repeat(2, 100px);
+  grid-template-rows: 30px;
+  padding-top:20px;
+  h2 {
+    &:first-of-type {
+      grid-area: 1/1;
+    }
+
+    &:last-of-type {
+      grid-area: 1/2;
+    }
+
+    a {
+      font-size: 19px;
+      font-weight: normal;
+      border: 1px solid #333;
+      text-align: center;
+
+      &.on {
+        background: $mainColor;
+        color: #fff;
+      }
+    }
+  }
+
+  .bbs {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    display: none;
+
+    &.on {
+      display: block;
+    }
+
+    table {
+      width: 100%;
+    }
+  }
+
+  .gallery {
+    position: absolute;
+    display: none;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    top: 60px;
+    padding: 10px;
+
+    &.on {
+      display: block;
+
+      ul {
+        display: flex;
+        height: 100%;
+
+
+        a {
+          background-size: cover;
+          height: 100%;
+          width:120px;
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  grid-area: 3/4/3/7;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    height: 100%;
+    text-indent: -9999px;
+    height:(200px/3)
+  }
+}
+
+.icon {
+  grid-area: 3/7/3/10;
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 180px;
-  .leftContent{
-    display:grid;
-    grid-area:1/1;
-    position:relative;
-    grid-template-columns: repeat(2, 100px);
-    grid-template-rows: 30px;
-    h2{
-      &:first-of-type{
-        grid-area:1/1;
-      }
-      &:last-of-type{
-        grid-area:1/2;
-      }
-      a{
-        font-size:19px;
-        font-weight:normal;
-        border:1px solid #333;
-        text-align:center;
-        &.on{
-          background:$mainColor;
-          color:#fff;
-        }
-      }
+  align-self:center;
+
+  li {
+    height: 150px;
+
+    &:nth-of-type(1) {
+      grid-area: 1/1;
     }
-    .bbs{
-      position:absolute;
-      left:0;
-      top:40px;
-      width:100%;
-      display:none;
-      &.on{
-        display:block;
-      }
-      table{
-        width:100%;
-      }
+
+    &:nth-of-type(2) {
+      grid-area: 1/2;
     }
-    .gallery{
-      position:absolute;
-      display:none;
-      left:0;
-      width:100%;
-      height:120px;
-      top:40px;
-      padding:10px;
-      &.on{
-        display:block;
-        ul{
-          display:flex;
-          height:100%;
-          li{
-            flex:1 0 0;
-            a{
-              background-size:cover;
-              height:100%;
-            }
-          }
-        }
-      }
+
+    &:nth-of-type(3) {
+      grid-area: 1/3;
     }
-  }
-  .banner{
-    grid-area:1/2;
-    display:flex;
-    flex-direction:column;
-    li{
-      flex:1 0 0;
-      a{
-        height:100%;
-        text-indent:-9999px;
-      }
-    }
-  }
-  .icon{
-    grid-area:1/3;
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    li{
-      height:150px;
-      &:nth-of-type(1){
-        grid-area:1/1;
-      }
-      &:nth-of-type(2){
-        grid-area:1/2;
-      }
-      &:nth-of-type(3){
-        grid-area:1/3;
-      }
-      a{
-        height:100%;
-        padding-top:120px;
-        text-align:center;
-        background-size:80% !important;
-        font-size:20px;
-      }
+
+    a {
+      height: 100%;
+      padding-top: 120px;
+      text-align: center;
+      background-size: 80% !important;
+      font-size: 20px;
     }
   }
 }
 
-footer{
-  display:grid;
+.logo {
+  background: url('../images/logof.png') center / cover;
+  height: 40px;
+  align-self: center;
+  width: 200px;
+  grid-area: 4/1;
+}
+
+.copyright {
+  color: #fff;
+  grid-area: 4/1/4/10;
   background:$subColor;
-  grid-template-columns:repeat(9,(1200px/9));
-  grid-template-rows:100px;
-  grid-area:4/1/4/10;
-  .logo{
-    background:url('../images/logof.png') center / cover;
-    height:40px;
-    align-self: center;
-    width:200px;
-  }
-  .copyright{
-    color:#fff;
-    grid-area:1/4/1/7;
-    align-self: center;
-    justify-self: center;
-  }
-  .sns{
-    grid-area:1/9;
-    align-self: center;
-    display:grid;
+  text-align: center;
+  line-height:100px;
+  z-index:-1;
+}
 
-    height:30px;
-    grid-template-columns: repeat(3,40px);
-    li{
-      &:nth-child(2){
-        grid-area:1/2;
-      }
-      &:nth-child(3){
-        grid-area:1/3;
-      }
-      a{
-        height:30px;
-        width:30px;
-        border-radius:3px;
-      }
+.sns {
+  grid-area: 4/9;
+  align-self: center;
+  display: grid;
+
+  height: 30px;
+  grid-template-columns: repeat(3, 40px);
+
+  li {
+    &:nth-child(2) {
+      grid-area: 1/2;
+    }
+
+    &:nth-child(3) {
+      grid-area: 1/3;
+    }
+
+    a {
+      height: 30px;
+      width: 30px;
+      border-radius: 3px;
     }
   }
 }
 
-.modal{
-  position:absolute;
-  left:50%;
-  top:20%;
-  transform:translateX(-50%);
-  background:#fff;
-  width:600px;
-  padding:20px 30px;
-  box-shadow:5px 5px 5px #777;
-  border-radius:10px;
-  visibility:hidden;
-  opacity:0;
-  transition:opacity .3s;
-  *{
-    margin:10px 0;
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  background: #fff;
+  width: 600px;
+  padding: 20px 30px;
+  box-shadow: 5px 5px 5px #777;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s;
+
+  * {
+    margin: 10px 0;
   }
-  .closeDiv{
-    display:flex;
+
+  .closeDiv {
+    display: flex;
     justify-content: center;
-    align-items:center;
-    .close{
-      width:100px;
-      display:flex;
+    align-items: center;
+
+    .close {
+      width: 100px;
+      display: flex;
       justify-content: center;
-      align-items:center;
-      height:50px;
-      background:$mainColor;
-      color:#fff;
-      border:none;
-      font-size:20px;
-      border-radius:5px;
-      cursor:pointer;
+      align-items: center;
+      height: 50px;
+      background: $mainColor;
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }
-  &.on{
-    visibility:visible;
-    opacity:1;
+
+  &.on {
+    visibility: visible;
+    opacity: 1;
   }
 }
